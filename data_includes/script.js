@@ -1,138 +1,91 @@
-//Início do Script
+PennController.ResetPrefix(null); // Permite usar os comandos sem o prefixo "PennController."
 
-//Inativa os prefixos do PennController (sem esse comando os códigos não funcionam)
-PennController.ResetPrefix(null);
-PennController.DebugOff();
-//Define a sequência de telas do experimento
-Sequence("Participante", "Instrucoes", randomize("Experimento"), SendResults(), "Final");
+// Define a ordem das telas no experimento
+Sequence("boas_vindas", "agradecimento");
 
-//Cria um cabeçalho. Todos os comandos dentro do cabeçalho serão rodados automaticamente antes de cada "trial"
-Header(
-//Define que todo texto será impresso na tela e que o tamanho da fonte será "1.2em"
-         defaultText
-            .css("font-size","1.2em")
-            .print()
-            
-         ,
-//Define que toda caixa de texto será impressa na tela e que o tamanho da fonte será "1.2em"
-         defaultTextInput
-            .css("font-size","1.2em")
-            .print()
-         ,
-//Define que todo botão será impresso na tela, que o tamanho da fonte será "1.2em" e que o participante será obrigado a interagir com ele para prosseguir com o experimento
-         defaultButton
-            .css("font-size","1.2em")
-            .center()
-            .print()
-            .wait()
-         ,         
-)
-
-
-//Cria uma nova tela - Tela de coleta de dados do participante
-newTrial("Participante",
-
-//Cria o texto "Bem-Vindos!"
-         newText("<p>Bem-Vindos!</p>")
-         ,
-         newText("<p>Neste experimento, você vai ouvir uma frase e depois deve escolher a melhor opção de interpretação para ela.</p>")
-         ,
-         newText("<p>Por favor, escreva seu NOME COMPLETO na caixa abaixo.</p>")
-         ,
-//Cria uma caixa de texto nomedada "Nome" para receber o nome do participante  
-         newTextInput("Nome")
-         ,
-         newText("<p>Agora selecione sua ESCOLARIDADE na caixa abaixo e aperte o botão 'Iniciar' para começar </p>")
-         , 
-//Cria uma caixa com seletores nomeada "Escolaridade" para que o participante selecione sua escolaridade
-         newDropDown("Escolaridade", "Selecione sua escolaridade")
-        .add("Médio completo", "Superior em curso", "Superior completo", "Pós-graduação")
-        .css("font-size","1.2em")
+// TELA 1: Boas-vindas e Coleta de Dados
+newTrial("boas_vindas",
+    newText("titulo", "Bem-vindo(a) ao Experimento!")
+        .css("font-size", "24px")
+        .css("font-weight", "bold")
         .print()
-        .log() //Envia para o arquivo "results" a opção selecionada pelo participante 
-         ,
-//Cria um botão nomeado "Iniciar"
-         newButton("Iniciar")
-         ,
-//Cria uma nova variável chamada "NOME" que recebe o conteúdo da caixa de texto "Nome"
-    newVar("NOME")
-        .global()
-        .set( getTextInput("Nome") )
-)
-
-//Envia para o arquivo "results" o conteúdo da variável "NOME"
-.log( "NOME" , getVar("NOME") )
-
-//Nova tela - Tela de instruções do treino
-newTrial("Instrucoes",
-         
-    newText("<p>INSTRUÇÕES:</p>")
     ,
-    newText("<p>Ouça a frase com atenção e depois clique em cima de uma das sentenças, <strong>A</strong> ou <strong>B</strong>, que você considerar a melhor interepretação.</p>")
-    ,    
-    //Cria um novo botão nomeado "Iniciar" e envia para o arquivo "results" a informação de quando ele é pressionado
-    newButton("Iniciar")
-        .log()
-)
-
-//Indica o uso da tabela "treino_script_auditivo.csv"
-Template("tabela_script_auditivo.csv",
-// "variable" vai automaticamente apontar para cada linha da tabela "tabela_script_auditivo.csv"
-    variable => newTrial( "Experimento",
-//"variable" aponta para todas as linhas da coluna "AudioExperimento" da tabela "tabela_script_auditivo.csv" e toca o audio referente a elas
-        newAudio("AudioExperimento", variable.AudioExperimento)
-            .play()
-        ,
-//Exibe na tela a imagem "alto_falante_icone.png"
-        newImage("alto_falante_icone.png")
-            .size( 90 , 90 )
-            .print()
-            .center()
-       
-        ,
-//Cria um botão nomeado "Próximo", envia para o arquivo "results" a informação de quando ele foi pressionado e remove ele da tela
-        newButton("Próximo")
-            .log()
-            .remove()
-        ,
-//Remove a imagem "alto_falante_icone.png" 
-        getImage("alto_falante_icone.png")
-            .remove()
-        ,
-        //Cria um novo texto nomeado "A" e "variable" aponta para todas as linhas da coluna "SentencaA" e imprime o texto presente nelas 
-        newText("A",variable.SentencaA)
-        ,
-        newText("B",variable.SentencaB)
-        ,
-        //Cria um canvas (uma caixa) e coloca os textos "A" e "B" um ao lado do outro
-        newCanvas( "2000vw", "800vh" )
-            .add( "center at 25%" , "middle at 2%" , getText("A") )
-            .add( "center at 75%" , "middle at 2%" , getText("B") )
-            .print() //Agora, dentro do canvas, é que os textos "A" e "B" serão impressos na tela
-        ,
-        //Possibilita a seleção dos textos "A" e "B" através do mouse ou das teclas "A" e "B". Também envia para o arquivo "result" qual texto foi selecionado
-        newSelector()
-            .add( getText("A") , getText("B") )
-            .keys("A","B")
-            .log()
-            .wait()
+    newText("espaco1", "<br><br>").print()
+    ,
+    // Coleta do nome do participante
+    newText("label_nome", "Por favor, insira seu nome e um sobrenome:")
+        .print()
+    ,
+    newTextInput("nome_participante", "")
+        .css("width", "300px")
+        .print()
+    ,
+    newText("espaco2", "<br><br>").print()
+    ,
+    // Instrução para a autoavaliação baseada na escala CEFR adaptada
+    newText("instrucao_escala", "Abaixo, selecione a opção que melhor descreve seu nível de inglês para <b>compreensão auditiva (Listening)</b>.<br>" +
+                              "<i>Nota: Se você ficar em dúvida entre um nível e outro, selecione o nível mais avançado dos dois que você está em dúvida.</i>")
+        .print()
+    ,
+    newText("espaco3", "<br>").print()
+    ,
+    // Criação dos botões de rádio (Scale) com as 6 opções solicitadas
+    newScale("nivel_ingles",
+        "1. Eu só entendo palavras isoladas e frases bem simples sobre mim, minha família e o que está ao meu redor, mas apenas se a pessoa falar bem devagar e de forma muito clara.",
+        "2. Eu compreendo expressões do dia a dia (como compras, trabalho e informações pessoais básicas). Consigo entender o ponto principal de avisos públicos e mensagens curtas, simples e claras.[cite: 1]",
+        "3. Eu entendo os pontos principais de conversas cotidianas sobre trabalho, escola ou lazer quando as pessoas falam de forma clara e padrão. Consigo compreender a ideia central de programas de rádio ou TV sobre notícias e assuntos do meu interesse se a fala for relativamente pausada.[cite: 1]",
+        "4. Eu consigo acompanhar discursos longos e até palestras com argumentos complexos, desde que o assunto seja familiar. Entendo a maioria dos jornais de TV e quase todos os filmes falados no sotaque padrão do inglês.[cite: 1]",
+        "5. Entendo conversas e discursos longos mesmo que eles não tenham uma estrutura muito clara ou quando as coisas ficam apenas subentendidas. Assisto a filmes e programas de TV sem fazer quase nenhum esforço.[cite: 1]",
+        "6. Não tenho nenhuma dificuldade para entender qualquer tipo de linguagem falada, seja ao vivo ou na TV/internet. Entendo até mesmo nativos falando na velocidade normal deles, precisando apenas de um tempinho para se acostumar com sotaques diferentes.[cite: 1]"
     )
-         
-    //Envia para o arquivo "results" o conteúdo da coluna "Group" 
-    .log("Group", variable.Group)
-    .log("Item", variable.Item)
-);
-
-//Nova Tela - Tela final    
-newTrial( "Final" ,
-    newText("<p> O experimento foi concluído. Obrigada pela participação!</p>")
-    .center()
+        .vertical() // Organiza as opções uma abaixo da outra
+        .labelsPosition("right") // Texto à direita do botão de seleção
+        .print()
     ,
-    newText("<p> Você receberá um e-mail com a sua declaração de participação.</p>")
-    .center()
-    .wait()
- )
+    newText("espaco4", "<br><br>").print()
+    ,
+    // Botão para avançar
+    newButton("proximo", "Iniciar Experimento")
+        .center()
+        .print()
+        .wait(
+            // Validações antes de prosseguir
+            getTextInput("nome_participante").test.text(/[a-zA-Z]+/) // Garante que o nome não está vazio
+                .and( getScale("nivel_ingles").test.selected() )     // Garante que uma opção foi marcada
+                .failure(
+                    newText("erro", "<span style='color:red;'>Por favor, preencha seu nome e selecione uma das opções antes de continuar.</span>")
+                        .print()
+                )
+        )
+    ,
+    // Armazena o nome globalmente para usar na próxima tela
+    newVar("global_nome")
+        .global()
+        .set( getTextInput("nome_participante") )
+)
+// Salva as variáveis diretamente nas colunas finais do arquivo de resultados (.csv)
+.log("nome_participante", getTextInput("nome_participante"))
+.log("nivel_ingles", getScale("nivel_ingles"));
 
-//Ajeita a barra de pogresso para que ela fique completa
-.setOption("countsForProgressBar",false);
-//Fim do Script
+
+// TELA 2: Agradecimento Final
+newTrial("agradecimento",
+    // Cria um elemento de texto vazio que será populado dinamicamente com o nome guardado
+    newText("texto_final", "")
+        .css("font-size", "18px")
+        .center()
+        .print()
+    ,
+    // Busca o valor da variável global e injeta no texto de agradecimento
+    getVar("global_nome")
+        .read()
+        .get( nome => getText("texto_final").text(`Muito obrigado pela sua participação, ${nome}! Seus dados foram registrados.`) )
+    ,
+    newText("espaco5", "<br><br>").print()
+    ,
+    // Botão finalizador
+    newButton("finalizar", "Finalizar e Enviar")
+        .center()
+        .print()
+        .wait()
+);
