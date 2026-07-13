@@ -1,6 +1,8 @@
-PennController.ResetPrefix(null); 
+PennController.ResetPrefix(null);
 
-// Define a sequência exata de execução: Boas-vindas -> Treino -> Instruções Experimento -> Experimento -> Agradecimento
+// =============================================================
+// SEQUÊNCIA DE EXECUÇÃO
+// =============================================================
 Sequence(
     "boas_vindas", 
     "instrucoes_teste", 
@@ -108,128 +110,75 @@ newTrial("instrucoes_teste",
         .wait()
 );
 
-
 // =============================================================
-// TELA 3: FASE DE TESTE (Apenas 3 itens específicos)
+// TELA 3: Teste (Itens 28, 37, 51)
 // =============================================================
 Template(
     GetTable("trials.csv")
         .filter( row => row.item == "28" || row.item == "37" || row.item == "51" ),
     row => newTrial("teste_ax",
-        // Variável que guardará o Tempo de Reação (padrão é Timeout caso não responda)
-        newVar("RT_medida_teste", "Timeout")
-        ,
-        newText("cruz", "+")
-            .css("font-size", "60px")
-            .css("display", "flex")
-            .css("justify-content", "center")
-            .css("align-items", "center")
-            .css("height", "40vh")
-            .center()
-            .print()
-        ,
-        newTimer("cruz_timer", 1000).start().wait()
-        ,
-        getText("cruz").remove()
-        ,
-        newImage("icone1", row.img_modelo)
-            .size(60, 60)
-            .css("display", "block")
-            .css("margin", "15vh auto")
-            .center()
-            .print()
-        ,
-        newAudio("audio_modelo_teste", row.audio_modelo)
-            .play()
-            .wait()
-        ,
-        getImage("icone1").remove()
-        ,
-        newTimer("isi_teste", 200).start().wait()
-        ,
-        newImage("icone2", row.img_alvo)
-            .size(60, 60)
-            .css("display", "block")
-            .css("margin", "15vh auto")
-            .center()
-            .print()
-        ,
-        newAudio("audio_alvo_teste", row.audio_alvo)
-            .play()
-            .wait() // O SCRIPT ESPERA O ÁUDIO TERMINAR AQUI
-        ,
+        // Usamos uma variável global simples para armazenar o valor
+        newFunction("reset_rt", () => { window.rt_final = "Timeout"; return null; }).call(),
         
-        // MARCO ZERO: Registra o milissegundo exato em que o áudio alvo acabou
-        newFunction("marca_tempo_teste", () => window.tempo_fim_audio_teste = Date.now() ).call()
-        ,
-        getImage("icone2").remove()
-        ,
+        newText("cruz", "+").center().print(),
+        newTimer("cruz_timer", 1000).start().wait(),
+        getText("cruz").remove(),
         
-        newTimer("timeout_teste", 5000).start()
-        ,
+        newImage("icone1", row.img_modelo).size(60, 60).center().print(),
+        newAudio("audio_modelo_teste", row.audio_modelo).play().wait(),
+        getImage("icone1").remove(),
+        
+        newTimer("isi_teste", 200).start().wait(),
+        
+        newImage("icone2", row.img_alvo).size(60, 60).center().print(),
+        newAudio("audio_alvo_teste", row.audio_alvo).play().wait(),
+        getImage("icone2").remove(),
+        
+        newFunction("marcar_inicio", () => { 
+            window.tempo_inicio_teste = performance.now(); 
+        }).call(),
+        
         newKey("resposta_teste", "VN")
             .log("all")
             .callback( 
-                // CAPTURA DE RESPOSTA: Calcula o RT exato da tecla menos o marco zero
-                getVar("RT_medida_teste").set( v => Date.now() - window.tempo_fim_audio_teste ),
-                getTimer("timeout_teste").stop() 
+                // Atualiza a variável global JS diretamente
+                newFunction("calcular_rt", () => {
+                    window.rt_final = Math.round(performance.now() - window.tempo_inicio_teste);
+                    console.log(`[DEBUG] RT calculado: ${window.rt_final}ms`);
+                    return null;
+                }).call(),
+                getTimer("timeout_teste").stop()
             )
         ,
-        getTimer("timeout_teste").wait()
-        ,
-        getKey("resposta_teste").disable()
+        newTimer("timeout_teste", 5000).start().wait(),
+        getKey("resposta_teste").disable(),
+        newTimer("buffer", 50).start().wait()
     )
+    .log("nome_participante", getVar("nome_participante"))
     .log("item", row.item)
-    .log("tipo", "teste")
     .log("condicao", row.condicao)
-    .log("resposta_correta", row.resposta_correta)
-    // Cria a coluna no CSV com a medida isolada do Tempo de Reação em milissegundos
-    .log("RT_Exato_ms", getVar("RT_medida_teste"))
+    // AQUI A MUDANÇA: Usamos a função de log nativa do PCIBEX que lê o window.rt_final no encerramento
+    .log("RT_Exato_ms", () => window.rt_final)
 );
 
-
 // =============================================================
-// TELA 4: Instruções da Fase Experimental
+// TELA 4: Instruções Experimento
 // =============================================================
 newTrial("instrucoes_experimento",
-    newText("titulo_exp", "Fase Experimental")
-        .css("font-size", "24px")
-        .css("font-weight", "bold")
-        .center()
-        .print()
-    ,
-    newText("espaco1_exp", "<br><br>").print()
-    ,
-    newText("instrucoes_exp",
-        "O treinamento acabou. Agora começaremos a <b>fase experimental</b>.<br><br>" +
-        "Lembre-se da sua tarefa:<br>" +
-        "<ul>" +
-        "<li>Pressione a tecla <b>V</b> se você acha que os estímulos são <b>DIFERENTES</b>.</li>" +
-        "<li>Pressione a tecla <b>N</b> se você acha que os estímulos são <b>IGUAIS</b>.</li>" +
-        "</ul>" +
-        "Concentre-se, mantenha seus dedos nas teclas V e N e responda o mais rápido que puder!"
-    )
-        .center()
-        .print()
-    ,
-    newText("espaco2_exp", "<br><br>").print()
-    ,
-    newButton("iniciar_exp", "Iniciar Experimento")
-        .center()
-        .print()
-        .wait()
+    newText("titulo_exp", "Fase Experimental").css("font-size", "24px").css("font-weight", "bold").center().print(),
+    newText("instrucoes_exp", "Treinamento concluído. Inicie o experimento.").center().print(),
+    newButton("iniciar_exp", "Iniciar Experimento").center().print().wait()
 );
 
-
 // =============================================================
-// TELA 5: FASE EXPERIMENTAL PRINCIPAL (Todos os itens randomizados)
+// TELA 5: Experimento Principal
 // =============================================================
 Template(
     GetTable("trials.csv"),
     row => newTrial("experimento_ax",
-        // Variável que guardará o Tempo de Reação (padrão é Timeout caso não responda)
-        newVar("RT_medida_exp", "Timeout")
-        ,
+        // Inicializa a variável global JS para evitar conflitos
+        newFunction("reset_rt_exp", () => { window.rt_final_exp = "Timeout"; return null; }).call(),
+        
         newText("cruz_exp", "+")
             .css("font-size", "60px")
             .css("display", "flex")
@@ -267,22 +216,24 @@ Template(
         ,
         newAudio("audio_alvo_exp", row.audio_alvo)
             .play()
-            .wait() // O SCRIPT ESPERA O ÁUDIO TERMINAR AQUI
+            .wait()
         ,
-        
-        // MARCO ZERO: Registra o milissegundo exato em que o áudio alvo acabou
-        newFunction("marca_tempo_exp", () => window.tempo_fim_audio_exp = Date.now() ).call()
+        // MARCO ZERO: Captura o momento em que o áudio terminou
+        newFunction("marca_tempo_exp", () => window.tempo_fim_audio_exp = performance.now() ).call()
         ,
         getImage("icone2_exp").remove()
         ,
-        
         newTimer("timeout_exp", 5000).start()
         ,
         newKey("resposta_exp", "VN")
             .log("all")
             .callback( 
-                // CAPTURA DE RESPOSTA: Calcula o RT exato da tecla menos o marco zero
-                getVar("RT_medida_exp").set( v => Date.now() - window.tempo_fim_audio_exp ),
+                // CÁLCULO: Atualiza a variável global e loga no console para conferência
+                newFunction("calcular_rt_exp", () => {
+                    window.rt_final_exp = Math.round(performance.now() - window.tempo_fim_audio_exp);
+                    console.log(`[DEBUG] RT Experimental (${row.item}): ${window.rt_final_exp}ms`);
+                    return null;
+                }).call(),
                 getTimer("timeout_exp").stop() 
             )
         ,
@@ -296,22 +247,14 @@ Template(
     .log("resposta_correta", row.resposta_correta)
     .log("audio_modelo", row.audio_modelo)
     .log("audio_alvo", row.audio_alvo)
-    // Cria a coluna no CSV com a medida isolada do Tempo de Reação em milissegundos
-    .log("RT_Exato_ms", getVar("RT_medida_exp"))
+    // APLICAÇÃO DA NOVA LÓGICA: Captura o valor final da janela global no encerramento do trial
+    .log("RT_Exato_ms", () => window.rt_final_exp)
 );
 
-
 // =============================================================
-// TELA 6: Agradecimento Final
+// TELA 6: Agradecimento
 // =============================================================
 newTrial("agradecimento",
-    newText("texto_final", "Muito obrigado pela sua participação! Seus dados foram registrados.<br><br><br>")
-        .css("font-size", "18px")
-        .center()
-        .print()
-    ,
-    newButton("finalizar", "Finalizar e Enviar")
-        .center()
-        .print()
-        .wait()
+    newText("final", "Muito obrigado! Seus dados foram registrados.").center().print(),
+    newButton("fim", "Finalizar").center().print().wait()
 );
