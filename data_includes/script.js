@@ -97,7 +97,7 @@ newTrial("instrucoes_teste",
         "<li>Pressione a tecla <b>V</b> se você acha que os estímulos são <b>DIFERENTES</b>.</li>" +
         "<li>Pressione a tecla <b>N</b> se você acha que os estímulos são <b>IGUAIS</b>.</li>" +
         "</ul>" +
-        "Posicione seus dedos nas teclas V e N. Responda o mais rápido que puder!"
+        "Posicione seus dedos nas teclas V e N. Aperte a tecla logo depois que você ouvir a última palavra. Responda o mais rápido que puder!"
     )
         .center()
         .print()
@@ -144,7 +144,7 @@ Template(
         
         newTimer("isi_teste", 200).start().wait(),
         
-        newImage("icone2", row.img_modelo)
+        newImage("icone2", row.img_alvo)
             .size(60, 60)
             .css("display", "block")
             .css("margin", "15vh auto")
@@ -194,7 +194,7 @@ newTrial("instrucoes_experimento",
     newText("espaco1_exp", "<br><br>").print()
     ,
     newText("instrucoes_exp",
-        "O treinamento acabou. Agora começaremos a <b>fase experimental</b>.<br><br>" +
+        "O treinamento acabou. Agora começaremos a <b>fase experimental!</b>.<br><br>" +
         "Lembre-se da sua tarefa:<br>" +
         "<ul>" +
         "<li>Pressione a tecla <b>V</b> se você acha que os estímulos são <b>DIFERENTES</b>.</li>" +
