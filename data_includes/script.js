@@ -120,17 +120,37 @@ Template(
         // Usamos uma variável global simples para armazenar o valor
         newFunction("reset_rt", () => { window.rt_final = "Timeout"; return null; }).call(),
         
-        newText("cruz", "+").center().print(),
+        newText("cruz", "+")
+            .css("font-size", "60px")
+            .css("display", "flex")
+            .css("justify-content", "center")
+            .css("align-items", "center")
+            .css("height", "40vh")
+            .center()
+            .print()
+        ,
         newTimer("cruz_timer", 1000).start().wait(),
         getText("cruz").remove(),
         
-        newImage("icone1", row.img_modelo).size(60, 60).center().print(),
+        newImage("icone1", row.img_modelo)
+            .size(60, 60)
+            .css("display", "block")
+            .css("margin", "15vh auto")
+            .center()
+            .print()
+        ,
         newAudio("audio_modelo_teste", row.audio_modelo).play().wait(),
         getImage("icone1").remove(),
         
         newTimer("isi_teste", 200).start().wait(),
         
-        newImage("icone2", row.img_alvo).size(60, 60).center().print(),
+        newImage("icone1", row.img_modelo)
+            .size(60, 60)
+            .css("display", "block")
+            .css("margin", "15vh auto")
+            .center()
+            .print()
+        ,
         newAudio("audio_alvo_teste", row.audio_alvo).play().wait(),
         getImage("icone2").remove(),
         
@@ -161,13 +181,33 @@ Template(
     .log("RT_Exato_ms", () => window.rt_final)
 );
 
-// =============================================================
-// TELA 4: Instruções Experimento
-// =============================================================
 newTrial("instrucoes_experimento",
-    newText("titulo_exp", "Fase Experimental").css("font-size", "24px").css("font-weight", "bold").center().print(),
-    newText("instrucoes_exp", "Treinamento concluído. Inicie o experimento.").center().print(),
-    newButton("iniciar_exp", "Iniciar Experimento").center().print().wait()
+    newText("titulo_exp", "Fase Experimental")
+        .css("font-size", "24px")
+        .css("font-weight", "bold")
+        .center()
+        .print()
+    ,
+    newText("espaco1_exp", "<br><br>").print()
+    ,
+    newText("instrucoes_exp",
+        "O treinamento acabou. Agora começaremos a <b>fase experimental</b>.<br><br>" +
+        "Lembre-se da sua tarefa:<br>" +
+        "<ul>" +
+        "<li>Pressione a tecla <b>V</b> se você acha que os estímulos são <b>DIFERENTES</b>.</li>" +
+        "<li>Pressione a tecla <b>N</b> se você acha que os estímulos são <b>IGUAIS</b>.</li>" +
+        "</ul>" +
+        "Concentre-se, mantenha seus dedos nas teclas V e N e responda o mais rápido que puder!"
+    )
+        .center()
+        .print()
+    ,
+    newText("espaco2_exp", "<br><br>").print()
+    ,
+    newButton("iniciar_exp", "Iniciar Experimento")
+        .center()
+        .print()
+        .wait()
 );
 
 // =============================================================
