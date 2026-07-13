@@ -1,55 +1,55 @@
-﻿item;tipo;condicao;resposta_correta;audio_modelo;audio_alvo;img_modelo;img_alvo
-1;experimental;a=a;igual;1dap.mp3;1dap.mp3;img1.png;img2.png
-2;experimental;a=a;igual;1gaf.mp3;1gaf.mp3;img1.png;img2.png
-3;experimental;a=a;igual;1tav.mp3;1tav.mp3;img1.png;img2.png
-4;experimental;a≠æ;diferente;2faz.mp3;2fæz.mp3;img1.png;img2.png
-5;experimental;a≠æ;diferente;2vak.mp3;2væk.mp3;img1.png;img2.png
-6;experimental;a≠æ;diferente;2ras.mp3;2ræs.mp3;img1.png;img2.png
-7;controle;a≠ɛ;diferente;3lar.mp3;3lɛr.mp3;img1.png;img2.png
-8;controle;a≠ɛ;diferente;3tad.mp3;3tɛd.mp3;img1.png;img2.png
-9;controle;a≠ɛ;diferente;3lav.mp3;3lɛv.mp3;img1.png;img2.png
-10;experimental;ɛ=ɛ;igual;4mɛv.mp3;4mɛv.mp3;img1.png;img2.png
-11;experimental;ɛ=ɛ;igual;4ʃɛv.mp3;4ʃɛv.mp3;img1.png;img2.png
-12;experimental;ɛ=ɛ;igual;4kɛf.mp3;4kɛf.mp3;img1.png;img2.png
-13;controle;ɛ≠a;diferente;5bɛz.mp3;5baz.mp3;img1.png;img2.png
-14;controle;ɛ≠a;diferente;5kɛʒ.mp3;5kaʒ.mp3;img1.png;img2.png
-15;controle;ɛ≠a;diferente;5zɛv.mp3;5zav.mp3;img1.png;img2.png
-16;experimental;ɛ≠æ;diferente;6pɛz.mp3;6pæz.mp3;img1.png;img2.png
-17;experimental;ɛ≠æ;diferente;6tɛv.mp3;6tæv.mp3;img1.png;img2.png
-18;experimental;ɛ≠æ;diferente;6tɛʃ.mp3;6tæʃ.mp3;img1.png;img2.png
-19;experimental;æ=æ;igual;7sæp.mp3;7sæp.mp3;img1.png;img2.png
-20;experimental;æ=æ;igual;7ræs.mp3;7ræs.mp3;img1.png;img2.png
-21;experimental;æ=æ;igual;7næʒ.mp3;7næʒ.mp3;img1.png;img2.png
-22;experimental;æ≠a;diferente;8dæv.mp3;8dav.mp3;img1.png;img2.png
-23;experimental;æ≠a;diferente;8zæt.mp3;8zat.mp3;img1.png;img2.png
-24;experimental;æ≠a;diferente;8ræf.mp3;8raf.mp3;img1.png;img2.png
-25;experimental;æ≠ɛ;diferente;9ʃæv.mp3;9ʃɛv.mp3;img1.png;img2.png
-26;experimental;æ≠ɛ;diferente;9bæp.mp3;9bɛp.mp3;img1.png;img2.png
-27;experimental;æ≠ɛ;diferente;9sæf.mp3;9sɛf.mp3;img1.png;img2.png
-28;controle;nome_igual;igual;DIkəʃ.mp3;DIkəʃ.mp3;img1.png;img2.png
-29;controle;nome_igual;igual;DImuk.mp3;DImuk.mp3;img1.png;img2.png
-30;controle;nome_igual;igual;DIsɔf.mp3;DIsɔf.mp3;img1.png;img2.png
-31;controle;nome_igual;igual;DIzɔt.mp3;DIzɔt.mp3;img1.png;img2.png
-32;controle;nome_igual;igual;DIpɘz.mp3;DIpɘz.mp3;img1.png;img2.png
-33;controle;nome_igual;igual;DIguv.mp3;DIguv.mp3;img1.png;img2.png
-34;controle;nome_igual;igual;DInər.mp3;DInər.mp3;img1.png;img2.png
-35;controle;nome_igual;igual;DImɔl.mp3;DImɔl.mp3;img1.png;img2.png
-36;controle;nome_igual;igual;DIpɔg.mp3;DIpɔg.mp3;img1.png;img2.png
-37;controle;vogal;diferente;DVpəs.mp3;DVpus.mp3;img1.png;img2.png
-38;controle;vogal;diferente;DVkɔs.mp3;DVkus.mp3;img1.png;img2.png
-39;controle;vogal;diferente;DVləf.mp3;DVluf.mp3;img1.png;img2.png
-40;controle;vogal;diferente;DVsəʒ.mp3;DVsɔʒ.mp3;img1.png;img2.png
-41;controle;vogal;diferente;DVgəb.mp3;DVgɔb.mp3;img1.png;img2.png
-42;controle;vogal;diferente;DVkuv.mp3;DVkɔv.mp3;img1.png;img2.png
-43;controle;vogal;diferente;DVbəp.mp3;DVbup.mp3;img1.png;img2.png
-44;controle;vogal;diferente;DVmɔv.mp3;DVməv.mp3;img1.png;img2.png
-45;controle;vogal;diferente;DVvɔk.mp3;DVvuk.mp3;img1.png;img2.png
-46;controle;consoante;diferente;DCɡɔb.mp3 ;DCɡɔs.mp3;img1.png;img2.png
-47;controle;consoante;diferente;DCmup.mp3;DCmug.mp3;img1.png;img2.png
-48;controle;consoante;diferente;DCfɔʃ.mp3;DCsɔʃ.mp3;img1.png;img2.png
-49;controle;consoante;diferente;DCzɔv.mp3;DCzɔd.mp3;img1.png;img2.png
-50;controle;consoante;diferente;DCdəʒ.mp3;DCtəʒ.mp3;img1.png;img2.png
-51;controle;vogal_consoante;diferente;DVClər.mp3;DVCbud.mp3;img1.png;img2.png
-52;controle;vogal_consoante;diferente;DVCmɔg.mp3;DVCləz.mp3;img1.png;img2.png
-53;controle;vogal_consoante;diferente;DVCguk.mp3;DVCrɔv.mp3;img1.png;img2.png
-54;controle;vogal_consoante;diferente;DVCbər.mp3;DVCpɔf.mp3;img1.png;img2.png
+﻿item,tipo,condicao,resposta_correta,audio_modelo,audio_alvo,img_modelo,img_alvo
+1,experimental,a=a,igual,1dap.mp3,1dap.mp3,img1.png,img2.png
+2,experimental,a=a,igual,1gaf.mp3,1gaf.mp3,img1.png,img2.png
+3,experimental,a=a,igual,1tav.mp3,1tav.mp3,img1.png,img2.png
+4,experimental,a≠æ,diferente,2faz.mp3,2fæz.mp3,img1.png,img2.png
+5,experimental,a≠æ,diferente,2vak.mp3,2væk.mp3,img1.png,img2.png
+6,experimental,a≠æ,diferente,2ras.mp3,2ræs.mp3,img1.png,img2.png
+7,controle,a≠ɛ,diferente,3lar.mp3,3lɛr.mp3,img1.png,img2.png
+8,controle,a≠ɛ,diferente,3tad.mp3,3tɛd.mp3,img1.png,img2.png
+9,controle,a≠ɛ,diferente,3lav.mp3,3lɛv.mp3,img1.png,img2.png
+10,experimental,ɛ=ɛ,igual,4mɛv.mp3,4mɛv.mp3,img1.png,img2.png
+11,experimental,ɛ=ɛ,igual,4ʃɛv.mp3,4ʃɛv.mp3,img1.png,img2.png
+12,experimental,ɛ=ɛ,igual,4kɛf.mp3,4kɛf.mp3,img1.png,img2.png
+13,controle,ɛ≠a,diferente,5bɛz.mp3,5baz.mp3,img1.png,img2.png
+14,controle,ɛ≠a,diferente,5kɛʒ.mp3,5kaʒ.mp3,img1.png,img2.png
+15,controle,ɛ≠a,diferente,5zɛv.mp3,5zav.mp3,img1.png,img2.png
+16,experimental,ɛ≠æ,diferente,6pɛz.mp3,6pæz.mp3,img1.png,img2.png
+17,experimental,ɛ≠æ,diferente,6tɛv.mp3,6tæv.mp3,img1.png,img2.png
+18,experimental,ɛ≠æ,diferente,6tɛʃ.mp3,6tæʃ.mp3,img1.png,img2.png
+19,experimental,æ=æ,igual,7sæp.mp3,7sæp.mp3,img1.png,img2.png
+20,experimental,æ=æ,igual,7ræs.mp3,7ræs.mp3,img1.png,img2.png
+21,experimental,æ=æ,igual,7næʒ.mp3,7næʒ.mp3,img1.png,img2.png
+22,experimental,æ≠a,diferente,8dæv.mp3,8dav.mp3,img1.png,img2.png
+23,experimental,æ≠a,diferente,8zæt.mp3,8zat.mp3,img1.png,img2.png
+24,experimental,æ≠a,diferente,8ræf.mp3,8raf.mp3,img1.png,img2.png
+25,experimental,æ≠ɛ,diferente,9ʃæv.mp3,9ʃɛv.mp3,img1.png,img2.png
+26,experimental,æ≠ɛ,diferente,9bæp.mp3,9bɛp.mp3,img1.png,img2.png
+27,experimental,æ≠ɛ,diferente,9sæf.mp3,9sɛf.mp3,img1.png,img2.png
+28,controle,nome_igual,igual,DIkəʃ.mp3,DIkəʃ.mp3,img1.png,img2.png
+29,controle,nome_igual,igual,DImuk.mp3,DImuk.mp3,img1.png,img2.png
+30,controle,nome_igual,igual,DIsɔf.mp3,DIsɔf.mp3,img1.png,img2.png
+31,controle,nome_igual,igual,DIzɔt.mp3,DIzɔt.mp3,img1.png,img2.png
+32,controle,nome_igual,igual,DIpɘz.mp3,DIpɘz.mp3,img1.png,img2.png
+33,controle,nome_igual,igual,DIguv.mp3,DIguv.mp3,img1.png,img2.png
+34,controle,nome_igual,igual,DInər.mp3,DInər.mp3,img1.png,img2.png
+35,controle,nome_igual,igual,DImɔl.mp3,DImɔl.mp3,img1.png,img2.png
+36,controle,nome_igual,igual,DIpɔg.mp3,DIpɔg.mp3,img1.png,img2.png
+37,controle,vogal,diferente,DVpəs.mp3,DVpus.mp3,img1.png,img2.png
+38,controle,vogal,diferente,DVkɔs.mp3,DVkus.mp3,img1.png,img2.png
+39,controle,vogal,diferente,DVləf.mp3,DVluf.mp3,img1.png,img2.png
+40,controle,vogal,diferente,DVsəʒ.mp3,DVsɔʒ.mp3,img1.png,img2.png
+41,controle,vogal,diferente,DVgəb.mp3,DVgɔb.mp3,img1.png,img2.png
+42,controle,vogal,diferente,DVkuv.mp3,DVkɔv.mp3,img1.png,img2.png
+43,controle,vogal,diferente,DVbəp.mp3,DVbup.mp3,img1.png,img2.png
+44,controle,vogal,diferente,DVmɔv.mp3,DVməv.mp3,img1.png,img2.png
+45,controle,vogal,diferente,DVvɔk.mp3,DVvuk.mp3,img1.png,img2.png
+46,controle,consoante,diferente,DCɡɔb.mp3 ,DCɡɔs.mp3,img1.png,img2.png
+47,controle,consoante,diferente,DCmup.mp3,DCmug.mp3,img1.png,img2.png
+48,controle,consoante,diferente,DCfɔʃ.mp3,DCsɔʃ.mp3,img1.png,img2.png
+49,controle,consoante,diferente,DCzɔv.mp3,DCzɔd.mp3,img1.png,img2.png
+50,controle,consoante,diferente,DCdəʒ.mp3,DCtəʒ.mp3,img1.png,img2.png
+51,controle,vogal_consoante,diferente,DVClər.mp3,DVCbud.mp3,img1.png,img2.png
+52,controle,vogal_consoante,diferente,DVCmɔg.mp3,DVCləz.mp3,img1.png,img2.png
+53,controle,vogal_consoante,diferente,DVCguk.mp3,DVCrɔv.mp3,img1.png,img2.png
+54,controle,vogal_consoante,diferente,DVCbər.mp3,DVCpɔf.mp3,img1.png,img2.png
