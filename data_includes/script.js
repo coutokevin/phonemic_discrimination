@@ -181,6 +181,9 @@ Template(
     .log("RT_Exato_ms", () => window.rt_final)
 );
 
+// =============================================================
+// TELA 4: Instruções da Fase Experimental
+// =============================================================
 newTrial("instrucoes_experimento",
     newText("titulo_exp", "Fase Experimental")
         .css("font-size", "24px")
