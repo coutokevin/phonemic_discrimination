@@ -144,7 +144,7 @@ Template(
         
         newTimer("isi_teste", 200).start().wait(),
         
-        newImage("icone1", row.img_modelo)
+        newImage("icone2", row.img_modelo)
             .size(60, 60)
             .css("display", "block")
             .css("margin", "15vh auto")
