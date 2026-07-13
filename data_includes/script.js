@@ -70,16 +70,25 @@ newTrial("boas_vindas",
 
 // TELA 2: Agradecimento Final
 newTrial("agradecimento",
-    // Cria um elemento de texto vazio que será populado dinamicamente com o nome guardado
-    newText("texto_final", "")
+    // Cria um elemento de texto inserindo diretamente o valor da variável global
+    newText("texto_final", "Muito obrigado pela sua participação, ")
         .css("font-size", "18px")
         .center()
         .print()
     ,
-    // Busca o valor da variável global e injeta no texto de agradecimento
-    getVar("global_nome")
-        .read()
-        .get( nome => getText("texto_final").text(`Muito obrigado pela sua participação, ${nome}! Seus dados foram registrados.`) )
+    // Adiciona o nome guardado logo após o texto inicial
+    newText("nome_na_tela", "")
+        .css("font-size", "18px")
+        .css("font-weight", "bold")
+        .text( getVar("global_nome") ) // Forma correta de ler o Var no PCIbex
+        .after( getText("texto_final") )
+        .print()
+    ,
+    // Adiciona o ponto final da frase
+    newText("ponto_final", "! Seus dados foram registrados.")
+        .css("font-size", "18px")
+        .after( getText("nome_na_tela") )
+        .print()
     ,
     newText("espaco5", "<br><br>").print()
     ,
