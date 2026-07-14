@@ -1,0 +1,96 @@
+#;;;;;;;;;;
+# Results on Mon;;;;;;;;;;
+# USER AGENT: Mozilla/5.0 (Windows NT 10.0;;;;;;;;;;
+# Design number was non-random = 0;;;;;;;;;;
+#;;;;;;;;;;
+# Columns below this comment are as follows:;;;;;;;;;;
+# 1. Results reception time.;;;;;;;;;;
+# 2. MD5 hash of participant's IP address.;;;;;;;;;;
+# 3. Controller name.;;;;;;;;;;
+# 4. Order number of item.;;;;;;;;;;
+# 5. Inner element number.;;;;;;;;;;
+# 6. Label.;;;;;;;;;;
+# 7. Latin Square Group.;;;;;;;;;;
+# 8. PennElementType.;;;;;;;;;;
+# 9. PennElementName.;;;;;;;;;;
+# 10. Parameter.;;;;;;;;;;
+# 11. Value.;;;;;;;;;;
+# 12. EventTime.;;;;;;;;;;
+# 13. nome_participante.;;;;;;;;;;
+# 14. nivel_ingles.;;;;;;;;;;
+# 15. Comments.;;;;;;;;;;
+1783982966;;0;nome;Start;Leonardo Teixeira;6. Não tenho nenhuma dificuldade para entender qualquer tipo de linguagem falada%2C seja ao vivo ou na TV/internet. Entendo até mesmo nativos falando na velocidade normal deles%2C precisando apenas de um tempinho para se acostumar com sotaques diferentes.<br><br>;NULL;;;
+# 13. Comments.;;;;;;;;;;
+# 13. nome_participante.;;;;;;;;;;
+# 14. item.;;;;;;;;;;
+# 15. condicao.;;;;;;;;;;
+# 16. RT_Exato_ms.;;;;;;;;;;
+# 17. Comments.;;;;;;;;;;
+1783982966;;resposta_teste;PressedKey;igual;nome_igual;324;NULL;;;
+1783982966;;resposta_teste;PressedKey;diferente;vogal;104;NULL;;;
+1783982966;;resposta_teste;PressedKey;diferente;vogal_consoante;296;NULL;;;
+# 13. Comments.;;;;;;;;;;
+# 13. item.;;;;;;;;;;
+# 14. tipo.;;;;;;;;;;
+# 15. condicao.;;;;;;;;;;
+# 16. resposta_correta.;;;;;;;;;;
+# 17. audio_modelo.;;;;;;;;;;
+# 18. audio_alvo.;;;;;;;;;;
+# 19. RT_Exato_ms.;;;;;;;;;;
+# 20. Comments.;;;;;;;;;;
+1783982966;;resposta_exp;PressedKey;diferente;a≠ɛ;diferente;3lar.mp3;3lɛr.mp3;398;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVvɔk.mp3;DVvuk.mp3;3350;NULL
+1783982966;;resposta_exp;PressedKey;igual;æ≠ɛ;diferente;9sæf.mp3;9sɛf.mp3;1310;NULL
+1783982966;;resposta_exp;PressedKey;diferente;consoante;diferente;DCɡɔb.mp3 ;DCɡɔs.mp3;1585;NULL
+1783982966;;resposta_exp;PressedKey;diferente;consoante;diferente;DCdəʒ.mp3;DCtəʒ.mp3;185;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠a;diferente;5zɛv.mp3;5zav.mp3;58;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIzɔt.mp3;DIzɔt.mp3;177;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVləf.mp3;DVluf.mp3;50;NULL
+1783982966;;resposta_exp;PressedKey;diferente;æ≠ɛ;diferente;9ʃæv.mp3;9ʃɛv.mp3;133;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal_consoante;diferente;DVCguk.mp3;DVCrɔv.mp3;282;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DImuk.mp3;DImuk.mp3;153;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIpɔg.mp3;DIpɔg.mp3;122;NULL
+1783982966;;resposta_exp;PressedKey;diferente;a≠ɛ;diferente;3lav.mp3;3lɛv.mp3;162;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠æ;diferente;6tɛʃ.mp3;6tæʃ.mp3;418;NULL
+1783982966;;resposta_exp;PressedKey;diferente;æ≠a;diferente;8ræf.mp3;8raf.mp3;885;NULL
+1783982966;;resposta_exp;PressedKey;igual;a=a;igual;1gaf.mp3;1gaf.mp3;355;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DInər.mp3;DInər.mp3;233;NULL
+1783982966;;resposta_exp;PressedKey;diferente;consoante;diferente;DCfɔʃ.mp3;DCsɔʃ.mp3;157;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ=ɛ;igual;4ʃɛv.mp3;4ʃɛv.mp3;998;NULL
+1783982966;;resposta_exp;PressedKey;igual;ɛ=ɛ;igual;4kɛf.mp3;4kɛf.mp3;277;NULL
+1783982966;;resposta_exp;PressedKey;igual;æ=æ;igual;7sæp.mp3;7sæp.mp3;291;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVmɔv.mp3;DVməv.mp3;210;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠æ;diferente;6pɛz.mp3;6pæz.mp3;222;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVgəb.mp3;DVgɔb.mp3;390;NULL
+1783982966;;resposta_exp;PressedKey;diferente;æ≠a;diferente;8zæt.mp3;8zat.mp3;290;NULL
+1783982966;;resposta_exp;PressedKey;igual;ɛ=ɛ;igual;4mɛv.mp3;4mɛv.mp3;254;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal_consoante;diferente;DVCbər.mp3;DVCpɔf.mp3;309;NULL
+1783982966;;resposta_exp;PressedKey;diferente;a≠æ;diferente;2ras.mp3;2ræs.mp3;54;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DImɔl.mp3;DImɔl.mp3;258;NULL
+1783982966;;resposta_exp;PressedKey;diferente;consoante;diferente;DCzɔv.mp3;DCzɔd.mp3;197;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIsɔf.mp3;DIsɔf.mp3;334;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠æ;diferente;6tɛv.mp3;6tæv.mp3;305;NULL
+1783982966;;resposta_exp;PressedKey;igual;æ=æ;igual;7næʒ.mp3;7næʒ.mp3;1433;NULL
+1783982966;;resposta_exp;PressedKey;igual;æ=æ;igual;7ræs.mp3;7ræs.mp3;106;NULL
+1783982966;;resposta_exp;PressedKey;diferente;æ≠ɛ;diferente;9bæp.mp3;9bɛp.mp3;502;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVsəʒ.mp3;DVsɔʒ.mp3;350;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVkɔs.mp3;DVkus.mp3;233;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠a;diferente;5bɛz.mp3;5baz.mp3;106;NULL
+1783982966;;resposta_exp;PressedKey;diferente;a≠æ;diferente;2vak.mp3;2væk.mp3;142;NULL
+1783982966;;resposta_exp;PressedKey;diferente;ɛ≠a;diferente;5kɛʒ.mp3;5kaʒ.mp3;38;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVpəs.mp3;DVpus.mp3;398;NULL
+1783982966;;resposta_exp;PressedKey;igual;a=a;igual;1dap.mp3;1dap.mp3;542;NULL
+1783982966;;resposta_exp;PressedKey;diferente;a≠æ;diferente;2faz.mp3;2fæz.mp3;181;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIpɘz.mp3;DIpɘz.mp3;378;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal_consoante;diferente;DVCmɔg.mp3;DVCləz.mp3;509;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIkəʃ.mp3;DIkəʃ.mp3;249;NULL
+1783982966;;resposta_exp;PressedKey;diferente;æ≠a;diferente;8dæv.mp3;8dav.mp3;85;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVkuv.mp3;DVkɔv.mp3;98;NULL
+1783982966;;resposta_exp;PressedKey;diferente;a≠ɛ;diferente;3tad.mp3;3tɛd.mp3;342;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal;diferente;DVbəp.mp3;DVbup.mp3;185;NULL
+1783982966;;resposta_exp;PressedKey;igual;a=a;igual;1tav.mp3;1tav.mp3;813;NULL
+1783982966;;resposta_exp;PressedKey;igual;nome_igual;igual;DIguv.mp3;DIguv.mp3;409;NULL
+1783982966;;resposta_exp;PressedKey;diferente;consoante;diferente;DCmup.mp3;DCmug.mp3;197;NULL
+1783982966;;resposta_exp;PressedKey;diferente;vogal_consoante;diferente;DVClər.mp3;DVCbud.mp3;238;NULL
+;;;;;;;;;;
+# 13. Comments.;;;;;;;;;;
